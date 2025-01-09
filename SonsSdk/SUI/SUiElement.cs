@@ -309,7 +309,7 @@ public class SUiElement<T> : SUiElement
     /// <returns></returns>
     public TObj Find<TObj> (string path) where TObj : SUiElement
     {
-        return (TObj)Activator.CreateInstance(typeof(TObj), Root.transform.Find(path).gameObject);
+        return (TObj)Activator.CreateInstance(typeof(TObj), new GameObject[1] { Root.transform.Find(path).gameObject });
     }
 
     /// <summary>
